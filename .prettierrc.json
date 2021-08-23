@@ -3,9 +3,5 @@
   "trailingComma": "es5",
   "tabWidth": 2,
   "semi": false,
-  "singleQuote": true,
-  "svelteSortOrder": "scripts-markup-styles",
-  "svelteStrictMode": true,
-  "svelteBracketNewLine": true,
-  "plugins": ["prettier-plugin-svelte"]
+  "singleQuote": true
 }
