@@ -1,7 +1,6 @@
 {
-  "name": "bolg-editor",
+  "name": "bolg-components",
   "license": "MIT",
-  "svelte": "src/index.svelte",
   "module": "dist/index.es.js",
   "main": "dist/index.umd.js",
   "scripts": {
@@ -11,50 +10,34 @@
     "test:watch": "jest src --watch",
     "serve": "sirv public --dev",
     "prepublishOnly": "npm run build",
-    "format": "prettier --write {**/*,*}.{js,scss,svelte}"
+    "format": "prettier --write {**/*,*}.{js,scss}"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/svelte": "^1.11.0",
     "autoprefixer": "^9.7.4",
     "babel-jest": "^25.1.0",
     "husky": "^4.0.6",
     "jest": "^25.1.0",
-    "jest-transform-svelte": "^2.1.1",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "prettier-plugin-svelte": "^0.7.0",
     "rollup": "^1.11.0",
-    "rollup-plugin-svelte": "^5.0.0",
     "sass": "^1.25.0",
-    "sirv-cli": "^0.4.5",
-    "svelte": "^3.0.0",
-    "svelte-eva-icons": "^2.0.0",
-    "svelte-preprocess": "^3.4.0",
-    "svelte-spa-router": "^2.0.0"
+    "sirv-cli": "^0.4.5"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Joe-noh/bolg-editor"
+    "url": "https://github.com/Joe-noh/bolg-components"
   },
-  "keywords": [
-    "svelte"
-  ],
-  "files": [
-    "src",
-    "index.mjs",
-    "index.js"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "{**/*,*}.{js,scss,svelte}": [
+    "{**/*,*}.{js,scss}": [
       "prettier --write",
       "git add"
     ]
