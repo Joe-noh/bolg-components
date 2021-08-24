@@ -10,17 +10,19 @@
     "test:watch": "jest src --watch",
     "serve": "sirv public --dev",
     "prepublishOnly": "npm run build",
-    "format": "prettier --write {**/*,*}.{js,scss}"
+    "format": "prettier --write **/*.ts"
   },
   "dependencies": {
     "lit": "^2.0.0-rc.3"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "husky": "^4.0.6",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "rollup": "^1.11.0"
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.3",
+    "ts-lit-plugin": "^1.2.1"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,7 @@
     }
   },
   "lint-staged": {
-    "{**/*,*}.{js,scss}": [
+    "**/*.ts": [
       "prettier --write",
       "git add"
     ]
