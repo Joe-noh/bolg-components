@@ -5,8 +5,8 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.esm.js',
-      format: 'esm',
+      file: 'dist/index.es.js',
+      format: 'es',
     },
     {
       file: 'dist/index.umd.js',
