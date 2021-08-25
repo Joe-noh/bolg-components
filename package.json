@@ -8,24 +8,24 @@
     "watch": "rollup -cw",
     "test": "jest src",
     "test:watch": "jest src --watch",
-    "serve": "sirv public --dev",
+    "serve": "live-server preview --mount=/dist:./dist",
+    "preview": "concurrently npm:serve npm:watch",
     "prepublishOnly": "npm run build",
-    "format": "prettier --write {**/*,*}.{js,scss}"
+    "format": "prettier --write **/*.ts"
+  },
+  "dependencies": {
+    "lit": "^2.0.0-rc.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "@testing-library/jest-dom": "^5.1.1",
-    "autoprefixer": "^9.7.4",
-    "babel-jest": "^25.1.0",
-    "husky": "^4.0.6",
-    "jest": "^25.1.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "rollup": "^1.11.0",
-    "sass": "^1.25.0",
-    "sirv-cli": "^0.4.5"
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "concurrently": "^6.2.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "live-server": "^1.2.1",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.3",
+    "ts-lit-plugin": "^1.2.1"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
     }
   },
   "lint-staged": {
-    "{**/*,*}.{js,scss}": [
+    "**/*.ts": [
       "prettier --write",
       "git add"
     ]
