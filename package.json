@@ -1,8 +1,8 @@
 {
   "name": "bolg-components",
   "license": "MIT",
-  "module": "dist/index.es.js",
-  "main": "dist/index.umd.js",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",
