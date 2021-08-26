@@ -16,6 +16,6 @@ export default {
   ],
   plugins: [
     resolve(),
-    typescript({ sourceMap: false }),
+    typescript({ tsconfig: './tsconfig.json' }),
   ],
 }

@@ -72,3 +72,9 @@ export class BlButton extends LitElement {
     `
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'bl-button': BlButton,
+  }
+}
