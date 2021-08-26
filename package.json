@@ -1,5 +1,6 @@
 {
   "name": "bolg-components",
+  "version": "0.0.1",
   "license": "MIT",
   "module": "dist/index.es.js",
   "main": "dist/index.umd.js",
@@ -30,6 +31,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Joe-noh/bolg-components"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   },
   "husky": {
     "hooks": {
