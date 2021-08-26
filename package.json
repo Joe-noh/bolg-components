@@ -36,6 +36,12 @@
   "publishConfig": {
     "registry":"https://npm.pkg.github.com"
   },
+  "files": [
+    "pacakge.json",
+    "dist/*",
+    "README.md",
+    "LICENSE"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
