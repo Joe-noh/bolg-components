@@ -43,6 +43,10 @@ export class BlButton extends LitElement {
       background-color: transparent;
       color: var(--primary-color);
     }
+
+    .fluid {
+      width: 100%;
+    }
   `
 
   @property({ type: String })
@@ -57,12 +61,16 @@ export class BlButton extends LitElement {
   @property({ type: Boolean })
   disabled: boolean = false
 
+  @property({ type: Boolean })
+  fluid: boolean = false
+
   render() {
     const classes = {
       sizeSmall: this.size === 'small',
       sizeNormal: this.size === 'normal',
       typePrimary: this.type === 'primary',
       typeOutline: this.type === 'outline',
+      fluid: this.fluid,
     }
 
     return html`
