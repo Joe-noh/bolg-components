@@ -43,6 +43,14 @@ export class BlButton extends LitElement {
       background-color: transparent;
       color: var(--primary-color);
     }
+    .typeClear {
+      background-color: transparent;
+      border-color: transparent;
+      color: var(--primary-color);
+    }
+    .typeClear:hover {
+      background-color: #3333330d;
+    }
 
     .fluid {
       width: 100%;
@@ -70,6 +78,7 @@ export class BlButton extends LitElement {
       sizeNormal: this.size === 'normal',
       typePrimary: this.type === 'primary',
       typeOutline: this.type === 'outline',
+      typeClear: this.type === 'clear',
       fluid: this.fluid,
     }
 
