@@ -1,5 +1,5 @@
 {
-  "name": "@joe-noh/bolg-components",
+  "name": "bolg-components",
   "version": "0.0.2",
   "license": "MIT",
   "module": "dist/index.es.js",
