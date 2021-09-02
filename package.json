@@ -33,9 +33,6 @@
     "type": "git",
     "url": "https://github.com/Joe-noh/bolg-components"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "files": [
     "pacakge.json",
     "dist/*",
