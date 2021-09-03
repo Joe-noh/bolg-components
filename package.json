@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "test": "web-test-runner src/**/*.test.ts --node-resolve",
+    "test": "web-test-runner",
     "pretest": "npm run build",
     "serve": "live-server preview --mount=/dist:./dist",
     "preview": "concurrently npm:serve npm:watch",
