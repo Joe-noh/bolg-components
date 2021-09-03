@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing'
 import { BlCheckbox } from './bl-checkbox'
-import '../../'
+import '../../../'
 
 describe('BlCheckbox', () => {
   it('toggled on when checked attribute is present', async () => {
