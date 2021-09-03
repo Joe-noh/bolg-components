@@ -3,6 +3,12 @@ import { BlCheckbox } from './bl-checkbox'
 import '../../../'
 
 describe('BlCheckbox', () => {
+  it('renders slot content', async () => {
+    const el = await fixture(html`<bl-checkbox>Hello</bl-checkbox>`)
+
+    expect(el.textContent).to.equal('Hello')
+  })
+
   it('toggled on when checked attribute is present', async () => {
     const el: BlCheckbox = await fixture(html`<bl-checkbox checked></bl-checkbox>`)
 
