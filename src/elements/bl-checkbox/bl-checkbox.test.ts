@@ -28,7 +28,7 @@ describe('BlCheckbox', () => {
   })
 
   it('emits change event', (done) => {
-    fixture(html`<bl-checkbox></bl-checkbox>`).then(el => {
+    fixture(html`<bl-checkbox></bl-checkbox>`).then((el) => {
       const checkbox = el as BlCheckbox
 
       checkbox.addEventListener('change', () => done())

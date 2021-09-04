@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js';
+import { classMap } from 'lit/directives/class-map.js'
 
 @customElement('bl-button')
 export class BlButton extends LitElement {
@@ -92,6 +92,6 @@ export class BlButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'bl-button': BlButton,
+    'bl-button': BlButton
   }
 }
