@@ -47,9 +47,6 @@
     "LICENSE"
   ],
   "lint-staged": {
-    "**/*.{ts,js,mjs}": [
-      "prettier --write",
-      "git add"
-    ]
+    "**/*.{ts,js,mjs}": "prettier --write"
   }
 }
