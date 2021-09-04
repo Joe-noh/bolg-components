@@ -13,8 +13,10 @@
     "serve": "live-server preview --mount=/dist:./dist",
     "preview": "concurrently npm:serve npm:watch",
     "prepublishOnly": "npm run build",
+    "lint-staged": "lint-staged",
     "format": "prettier --write './**/*.{ts,js,mjs}'",
-    "format:check": "prettier --check './**/*.{ts,js,mjs}'"
+    "format:check": "prettier --check './**/*.{ts,js,mjs}'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "lit": "^2.0.0-rc.3"
@@ -44,13 +46,8 @@
     "README.md",
     "LICENSE"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "**/*.ts": [
+    "**/*.{ts,js,mjs}": [
       "prettier --write",
       "git add"
     ]
