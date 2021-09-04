@@ -8,8 +8,8 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",
-    "test": "jest src",
-    "test:watch": "jest src --watch",
+    "test": "web-test-runner",
+    "pretest": "npm run build",
     "serve": "live-server preview --mount=/dist:./dist",
     "preview": "concurrently npm:serve npm:watch",
     "prepublishOnly": "npm run build",
@@ -20,8 +20,12 @@
   },
   "devDependencies": {
     "@compodoc/live-server": "^1.2.2",
+    "@open-wc/testing": "^2.5.33",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
+    "@types/mocha": "^9.0.0",
+    "@web/dev-server-esbuild": "^0.2.14",
+    "@web/test-runner": "^0.13.17",
     "concurrently": "^6.2.1",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",

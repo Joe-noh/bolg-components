@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 
 @customElement('bl-checkbox')
 export class BlCheckbox extends LitElement {
@@ -64,18 +64,32 @@ export class BlCheckbox extends LitElement {
     }
   `
 
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   checked: boolean = false
+
+  @query('input')
+  input: HTMLInputElement | undefined
 
   render() {
     return html`
       <label class="checkbox">
-        <input type="checkbox" class="input" ?checked=${this.checked}>
+        <input type="checkbox" class="input" ?checked=${this.checked} @click=${this.handleClick}>
         <span class="label">
           <slot></slot>
         </span>
       </label>
     `
+  }
+
+  click() {
+    this.input?.click()
+  }
+
+  private handleClick() {
+    this.checked = !this.checked
+
+    const event = new Event('change', { bubbles: true, composed: true })
+    this.dispatchEvent(event)
   }
 }
 
