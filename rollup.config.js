@@ -14,8 +14,5 @@ export default {
       format: 'umd',
     },
   ],
-  plugins: [
-    resolve(),
-    typescript({ tsconfig: './tsconfig.json' }),
-  ],
+  plugins: [resolve(), typescript({ tsconfig: './tsconfig.json' })],
 }

@@ -12,7 +12,7 @@ export class BlCheckbox extends LitElement {
       cursor: pointer;
     }
 
-    @supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    @supports (-webkit-appearance: none) or (-moz-appearance: none) {
       .checkbox {
         position: relative;
         padding-left: 17px;
@@ -73,7 +73,7 @@ export class BlCheckbox extends LitElement {
   render() {
     return html`
       <label class="checkbox">
-        <input type="checkbox" class="input" ?checked=${this.checked} @click=${this.handleClick}>
+        <input type="checkbox" class="input" ?checked=${this.checked} @click=${this.handleClick} />
         <span class="label">
           <slot></slot>
         </span>
@@ -95,6 +95,6 @@ export class BlCheckbox extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'bl-checkbox': BlCheckbox,
+    'bl-checkbox': BlCheckbox
   }
 }

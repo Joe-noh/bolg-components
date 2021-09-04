@@ -13,7 +13,7 @@
     "serve": "live-server preview --mount=/dist:./dist",
     "preview": "concurrently npm:serve npm:watch",
     "prepublishOnly": "npm run build",
-    "format": "prettier --write **/*.ts"
+    "format": "prettier --write './**/*.{ts,js,mjs}'"
   },
   "dependencies": {
     "lit": "^2.0.0-rc.3"

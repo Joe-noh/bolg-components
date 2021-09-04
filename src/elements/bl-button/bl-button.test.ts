@@ -10,7 +10,7 @@ describe('BlButton', () => {
   })
 
   it('emits click event', (done) => {
-    fixture(html`<bl-button></bl-button>`).then(el => {
+    fixture(html`<bl-button></bl-button>`).then((el) => {
       const checkbox = el as BlButton
 
       checkbox.addEventListener('click', (e) => done())
