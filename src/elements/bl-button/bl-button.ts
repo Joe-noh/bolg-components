@@ -6,8 +6,8 @@ import { classMap } from 'lit/directives/class-map.js'
 export class BlButton extends LitElement {
   static styles = css`
     :host {
-      --primary-color: #e3564f;
-      --button-text-color: #fafafa;
+      --primary-color: var(--button-color, #e3564f);
+      --button-text-color: var(--text-color, #fafafa);
       --font-size-small: 14px;
       --font-size-normal: 16px;
     }

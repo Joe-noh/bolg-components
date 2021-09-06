@@ -5,7 +5,7 @@ import { customElement, property, query } from 'lit/decorators.js'
 export class BlCheckbox extends LitElement {
   static styles = css`
     :host {
-      --primary-color: #e3564f;
+      --primary-color: var(--color, #e3564f);
     }
 
     .checkbox {
