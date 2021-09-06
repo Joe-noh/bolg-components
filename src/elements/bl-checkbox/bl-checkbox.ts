@@ -1,11 +1,13 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, unsafeCSS } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
+import { live } from 'lit/directives/live.js'
+import { primaryColor } from '../../styles/colors'
 
 @customElement('bl-checkbox')
 export class BlCheckbox extends LitElement {
   static styles = css`
     :host {
-      --primary-color: #e3564f;
+      --primary-color: var(--color, ${unsafeCSS(primaryColor)});
     }
 
     .checkbox {
@@ -73,7 +75,7 @@ export class BlCheckbox extends LitElement {
   render() {
     return html`
       <label class="checkbox">
-        <input type="checkbox" class="input" ?checked=${this.checked} @click=${this.handleClick} />
+        <input type="checkbox" class="input" ?checked=${live(this.checked)} @change=${this.handleChange} />
         <span class="label">
           <slot></slot>
         </span>
@@ -85,7 +87,7 @@ export class BlCheckbox extends LitElement {
     this.input?.click()
   }
 
-  private handleClick() {
+  private handleChange() {
     this.checked = !this.checked
 
     const event = new Event('change', { bubbles: true, composed: true })

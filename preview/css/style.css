@@ -38,3 +38,12 @@ body {
   flex-flow: column nowrap;
   gap: 1rem;
 }
+
+.custom-colored-button {
+  --button-color: #e8d920;
+  --text-color: #444444;
+}
+
+.custom-colored-checkbox {
+  --color: #1640d3;
+}
