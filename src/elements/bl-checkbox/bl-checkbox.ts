@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
+import { live } from 'lit/directives/live.js'
 
 @customElement('bl-checkbox')
 export class BlCheckbox extends LitElement {
@@ -73,7 +74,7 @@ export class BlCheckbox extends LitElement {
   render() {
     return html`
       <label class="checkbox">
-        <input type="checkbox" class="input" ?checked=${this.checked} @change=${this.handleChange} />
+        <input type="checkbox" class="input" ?checked=${live(this.checked)} @change=${this.handleChange} />
         <span class="label">
           <slot></slot>
         </span>
