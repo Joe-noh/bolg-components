@@ -1,12 +1,13 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
+import { primaryColor } from '../../styles/colors'
 
 @customElement('bl-button')
 export class BlButton extends LitElement {
   static styles = css`
     :host {
-      --primary-color: var(--button-color, #e3564f);
+      --primary-color: var(--button-color, ${unsafeCSS(primaryColor)});
       --button-text-color: var(--text-color, #fafafa);
       --font-size-small: 14px;
       --font-size-normal: 16px;

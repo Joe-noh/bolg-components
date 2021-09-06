@@ -1,12 +1,13 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, unsafeCSS } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { live } from 'lit/directives/live.js'
+import { primaryColor } from '../../styles/colors'
 
 @customElement('bl-checkbox')
 export class BlCheckbox extends LitElement {
   static styles = css`
     :host {
-      --primary-color: var(--color, #e3564f);
+      --primary-color: var(--color, ${unsafeCSS(primaryColor)});
     }
 
     .checkbox {
