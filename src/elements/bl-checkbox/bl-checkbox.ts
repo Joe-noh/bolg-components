@@ -73,7 +73,7 @@ export class BlCheckbox extends LitElement {
   render() {
     return html`
       <label class="checkbox">
-        <input type="checkbox" class="input" ?checked=${this.checked} @click=${this.handleClick} />
+        <input type="checkbox" class="input" ?checked=${this.checked} @change=${this.handleChange} />
         <span class="label">
           <slot></slot>
         </span>
@@ -85,7 +85,7 @@ export class BlCheckbox extends LitElement {
     this.input?.click()
   }
 
-  private handleClick() {
+  private handleChange() {
     this.checked = !this.checked
 
     const event = new Event('change', { bubbles: true, composed: true })
