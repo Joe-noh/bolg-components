@@ -44,5 +44,24 @@
         </bl-box>
       </div>
     </div>
+
+    <div class="section">
+      <h2 class="section__heading" id="loader">Loader</h2>
+      <div class="section__body">
+        <bl-button id="show-loader">Show</bl-button>
+        <bl-loader id="loader-element" style="display: none;"></bl-loader>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector('#show-loader').addEventListener('click', () => {
+        const loader = document.querySelector('bl-loader')
+        loader.style.display = 'block'
+
+        setTimeout(() => {
+          loader.style.display = 'none'
+        }, 2000)
+      })
+    </script>
   </body>
 </html>
