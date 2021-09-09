@@ -40,10 +40,10 @@ body {
 }
 
 .custom-colored-button {
-  --button-color: #e8d920;
-  --text-color: #444444;
+  --bl-button-color: #e8d920;
+  --bl-text-color: #444444;
 }
 
 .custom-colored-checkbox {
-  --color: #1640d3;
+  --bl-checkbox-color: #1640d3;
 }
