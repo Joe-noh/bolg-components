@@ -7,8 +7,8 @@ import { primaryColor } from '../../styles/colors'
 export class BlButton extends LitElement {
   static styles = css`
     :host {
-      --primary-color: var(--button-color, ${unsafeCSS(primaryColor)});
-      --button-text-color: var(--text-color, #fafafa);
+      --primary-color: var(--bl-button-color, ${unsafeCSS(primaryColor)});
+      --button-text-color: var(--bl-text-color, #fafafa);
       --font-size-small: 14px;
       --font-size-normal: 16px;
     }

@@ -7,7 +7,7 @@ import { primaryColor } from '../../styles/colors'
 export class BlCheckbox extends LitElement {
   static styles = css`
     :host {
-      --primary-color: var(--color, ${unsafeCSS(primaryColor)});
+      --primary-color: var(--bl-checkbox-color, ${unsafeCSS(primaryColor)});
     }
 
     .checkbox {
