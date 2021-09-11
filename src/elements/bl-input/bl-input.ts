@@ -2,8 +2,8 @@ import { LitElement, html, css } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { live } from 'lit/directives/live.js'
 
-@customElement('bl-text-input')
-export class BlTextInput extends LitElement {
+@customElement('bl-input')
+export class BlInput extends LitElement {
   static styles = css`
     .input {
       width: 100%;
@@ -20,6 +20,9 @@ export class BlTextInput extends LitElement {
   @property({ type: String, reflect: true })
   value: String = ''
 
+  @property({ type: String, reflect: true, attribute: 'native-type' })
+  nativeType: String = 'text'
+
   @property({ type: String, reflect: true })
   placeholder: String = ''
 
@@ -31,7 +34,14 @@ export class BlTextInput extends LitElement {
 
   render() {
     return html`
-      <input type="text" class="input" .value=${live(this.value)} .placeholder=${this.placeholder} ?disabled=${this.disabled} @input=${this.handleInput} />
+      <input
+        class="input"
+        .type="${live(this.nativeType)}"
+        .value=${live(this.value)}
+        .placeholder=${this.placeholder}
+        ?disabled=${this.disabled}
+        @input=${this.handleInput}
+      />
     `
   }
 
@@ -42,6 +52,6 @@ export class BlTextInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'bl-text-input': BlTextInput
+    'bl-input': BlInput
   }
 }
