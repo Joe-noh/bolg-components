@@ -10,6 +10,12 @@ describe('BlTextInput', () => {
     expect(el.input.disabled).to.equal(false)
   })
 
+  it('set given native-type as type', async () => {
+    const el: BlTextInput = await fixture(html`<bl-text-input native-type="number" />`)
+
+    expect(el.input.type).to.equal('number')
+  })
+
   it('set given placeholder', async () => {
     const el: BlTextInput = await fixture(html`<bl-text-input placeholder="Hey" />`)
 

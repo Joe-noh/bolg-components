@@ -20,6 +20,9 @@ export class BlTextInput extends LitElement {
   @property({ type: String, reflect: true })
   value: String = ''
 
+  @property({ type: String, reflect: true, attribute: 'native-type' })
+  nativeType: String = 'text'
+
   @property({ type: String, reflect: true })
   placeholder: String = ''
 
@@ -31,7 +34,14 @@ export class BlTextInput extends LitElement {
 
   render() {
     return html`
-      <input type="text" class="input" .value=${live(this.value)} .placeholder=${this.placeholder} ?disabled=${this.disabled} @input=${this.handleInput} />
+      <input
+        class="input"
+        .type="${live(this.nativeType)}"
+        .value=${live(this.value)}
+        .placeholder=${this.placeholder}
+        ?disabled=${this.disabled}
+        @input=${this.handleInput}
+      />
     `
   }
 
