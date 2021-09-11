@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing'
 import { BlInput } from './bl-input'
-import '../../../dist'
+import '../../../'
 
 describe('BlInput', () => {
   it('set given value', async () => {
