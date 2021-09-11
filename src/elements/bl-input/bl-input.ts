@@ -2,8 +2,8 @@ import { LitElement, html, css } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { live } from 'lit/directives/live.js'
 
-@customElement('bl-text-input')
-export class BlTextInput extends LitElement {
+@customElement('bl-input')
+export class BlInput extends LitElement {
   static styles = css`
     .input {
       width: 100%;
@@ -52,6 +52,6 @@ export class BlTextInput extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'bl-text-input': BlTextInput
+    'bl-input': BlInput
   }
 }
