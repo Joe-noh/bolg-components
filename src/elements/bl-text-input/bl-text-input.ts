@@ -13,6 +13,7 @@ export class BlTextInput extends LitElement {
       padding: 10px;
       color: #444444;
       background-color: #ffffff;
+      box-sizing: border-box;
     }
   `
 
