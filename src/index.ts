@@ -1,4 +1,5 @@
 export { BlBox } from './elements/bl-box/bl-box'
 export { BlButton } from './elements/bl-button/bl-button'
+export { BlTextInput } from './elements/bl-text-input/bl-text-input'
 export { BlCheckbox } from './elements/bl-checkbox/bl-checkbox'
 export { BlLoader } from './elements/bl-loader/bl-loader'
