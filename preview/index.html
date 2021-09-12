@@ -14,43 +14,51 @@
     <div class="section">
       <h2 class="section__heading" id="button">Button</h2>
       <div class="section__body">
-        <bl-button type="primary">Primary Type</bl-button>
-        <bl-button type="outline">Outline Type</bl-button>
-        <bl-button type="clear">Clear Type</bl-button>
-        <bl-button size="normal">Normal Size</bl-button>
-        <bl-button size="small">Small Size</bl-button>
-        <bl-button fluid>Fluid</bl-button>
-        <bl-button disabled="disabled">Disabled</bl-button>
-        <bl-button type="primary" class="custom-colored-button">Custom Colored</bl-button>
+        <code-example>
+          <bl-button type="primary">Primary Type</bl-button>
+          <bl-button type="outline">Outline Type</bl-button>
+          <bl-button type="clear">Clear Type</bl-button>
+          <bl-button size="normal">Normal Size</bl-button>
+          <bl-button size="small">Small Size</bl-button>
+          <bl-button fluid>Fluid</bl-button>
+          <bl-button disabled="disabled">Disabled</bl-button>
+          <bl-button type="primary" class="custom-colored-button">Custom Colored</bl-button>
+        </code-example>
       </div>
     </div>
 
     <div class="section">
       <h2 class="section__heading" id="checkbox">Text Input</h2>
       <div class="section__body">
-        <bl-input native-type="text" value="Hello" placeholder="Placeholder"></bl-input>
-        <bl-input native-type="number" value="3"></bl-input>
-        <bl-input native-type="date" value="2021-09-12"></bl-input>
+        <code-example>
+          <bl-input native-type="text" value="Hello" placeholder="Placeholder"></bl-input>
+          <bl-input native-type="number" value="3"></bl-input>
+          <bl-input native-type="date" value="2021-09-12"></bl-input>
+        </code-example>
       </div>
     </div>
 
     <div class="section">
       <h2 class="section__heading" id="checkbox">Checkbox</h2>
       <div class="section__body">
-        <bl-checkbox checked>Checked</bl-checkbox>
-        <bl-checkbox>Unchecked</bl-checkbox>
-        <bl-checkbox checked class="custom-colored-checkbox">Custom Colored</bl-checkbox>
+        <code-example>
+          <bl-checkbox checked>Checked</bl-checkbox>
+          <bl-checkbox>Unchecked</bl-checkbox>
+          <bl-checkbox checked class="custom-colored-checkbox">Custom Colored</bl-checkbox>
+        </code-example>
       </div>
     </div>
 
     <div class="section">
       <h2 class="section__heading" id="box">Box</h2>
       <div class="section__body">
-        <bl-box>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </bl-box>
+        <code-example>
+          <bl-box>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </bl-box>
+        </code-example>
       </div>
     </div>
 
@@ -71,6 +79,62 @@
           loader.style.display = 'none'
         }, 2000)
       })
+    </script>
+
+    <template id="code-example">
+      <style>
+        .body {
+          display: flex;
+          flex-flow: column nowrap;
+          gap: 1rem;
+        }
+        .code-block {
+          margin: 2rem 0 0 0;
+        }
+        pre {
+          margin: 0;
+          padding: 0;
+          overflow-x: scroll;
+          line-height: 1.3;
+        }
+      </style>
+      <div>
+        <div class="body">
+          <slot></slot>
+        </div>
+        <div class="code-block">
+          <bl-box>
+            <pre><code id="code"></code></pre>
+          </bl-box>
+        </div>
+      </div>
+    </template>
+
+    <script>
+      class CodeExample extends HTMLElement {
+        constructor() {
+          super()
+
+          const template = document.getElementById('code-example')
+          const node = template.content.cloneNode(true)
+
+          this.attachShadow({ mode: 'open' }).appendChild(node)
+        }
+
+        connectedCallback() {
+          const codeBlock = this.shadowRoot.querySelector('#code')
+
+          codeBlock.innerText = this.removeIndent(this.innerHTML)
+        }
+
+        removeIndent(html) {
+          const firstLineIndent = /^\s+/.exec(html)[0]
+
+          return html.replaceAll(firstLineIndent, "\n").trim()
+        }
+      }
+
+      customElements.define('code-example', CodeExample)
     </script>
   </body>
 </html>
