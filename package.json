@@ -19,7 +19,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "lit": "^2.0.0-rc.3"
+    "lit": "^2.0.0"
   },
   "devDependencies": {
     "@compodoc/live-server": "^1.2.2",
